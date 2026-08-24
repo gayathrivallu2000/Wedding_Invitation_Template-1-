@@ -241,3 +241,35 @@ musicButton.addEventListener("click", function () {
     }
 
 });
+
+
+
+// Tap to Enter
+
+const welcomeScreen =
+    document.getElementById("welcomeScreen");
+
+const enterButton =
+    document.getElementById("enterButton");
+
+enterButton.addEventListener("click", function () {
+
+    // Hide welcome screen
+    welcomeScreen.classList.add("hide");
+
+    // Start wedding music
+    weddingMusic.play()
+        .then(function () {
+
+            musicButton.textContent = "🔊";
+
+            musicButton.classList.add("playing");
+
+        })
+        .catch(function () {
+
+            console.log("Music could not start.");
+
+        });
+
+});
